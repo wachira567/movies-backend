@@ -18,3 +18,13 @@ class Genre(Base):
     id = Column(Integer(), primary_key=True)
     name = Column(Text(), nullable=False, unique=True)
     created_at = Column(DateTime, default = datetime.now())
+
+class Catalogue(Base):
+    __tablename__ = "catalogues"
+
+    id = Column(Integer(), primary_key=True)
+    name = Column(Text(), nullable=False)
+    year = Column(Integer(), nullable=False)
+    like_count = Column(Integer(), nullable=False, default=0)
+    duration = Column(Integer(), nullable=False) # we will store duration in minutes
+    created_at = Column(DateTime, default = datetime.now())
